@@ -8,7 +8,7 @@ import { useState } from 'react';
 import CartProvider from './Store/CartProvider';
 import Home from './Home';
 import About from './About';
-
+import Contact from './Contact';
 function App() {
   const [state, setState] = useState(false);
   return (
@@ -17,9 +17,10 @@ function App() {
         <Navbar bg="success" expand="lg">
           <Container>
             <Navbar.Brand href="#"> E-Commerce</Navbar.Brand>
-            <NavLink to="/" exact activeClassName="active">Home</NavLink>
-            <NavLink to="/about" activeClassName="active">About</NavLink>
-            <NavLink to="/products" activeClassName="active">Products</NavLink>
+            <NavLink to="/" exact activeClassName="active" style={{color : 'black'}}>Home</NavLink>
+            <NavLink to="/about" activeClassName="active" style={{color : 'black'}}>About</NavLink>
+            <NavLink to="/products" activeClassName="active" style={{color : 'black'}}>Products</NavLink>
+            <NavLink to="/contact"  activeClassName="active" style={{color : 'black'}}>Contact Us</NavLink>
             <CartBtn onClick={() => setState(true)} />
           </Container>
         </Navbar>
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/products" component={Products} />
+          <Route path="/contact" component={Contact} />
         </Switch>
       </CartProvider>
     </Router>
