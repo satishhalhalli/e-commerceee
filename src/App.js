@@ -9,6 +9,7 @@ import CartProvider from './Store/CartProvider';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
+import ProductDetails from './Sharp/ProductDetails';
 function App() {
   const [state, setState] = useState(false);
   return (
@@ -28,9 +29,13 @@ function App() {
         {state &&  <Cart onClose={() => setState(false)} />}
 
         <Switch>
-          <Route path="/" exact component={Home} />
+          {/* <Route path="/" exact component={Home} /> */}
           <Route path="/about" component={About} />
           <Route path="/products" component={Products} />
+         
+          <Route path="/product/:id" component={ProductDetails} />
+
+      <Route exact path="/" component={Products} />
           <Route path="/contact" component={Contact} />
         </Switch>
       </CartProvider>
